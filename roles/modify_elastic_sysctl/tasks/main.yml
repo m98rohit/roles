@@ -1,21 +1,5 @@
 ---
 - name: "Creating /etc/sysctl.conf if not present"
-  file:
-    path: /etc/sysctl.conf
-    state: touch 
-- name: "set vm.swappiness"
-  sysctl:
-    name: vm.swappiness
-    value: '1'
-    sysctl_set: yes
-    state: present
-    reload: yes   
-- name: "set vm.max_map_count"
-  sysctl:
-    name: vm.max_map_count
-    value: "262144"
-    sysctl_set: yes
-    state: present
-    reload: yes       
+  action: ping  
 ...
 
