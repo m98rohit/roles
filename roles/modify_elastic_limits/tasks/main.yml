@@ -1,0 +1,103 @@
+---
+- name: Ensure /etc/security/limits.conf exists 
+  file:
+    path: /etc/security/limits.conf 
+    state: touch
+- name: set ccrccloudop nofile to 65536(soft)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: soft
+    limit_item: nofile
+    value: "65536"
+- name: set ccrccloudop nofile to 65536(hard)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: hard
+    limit_item: nofile
+    value: "65536"
+- name: set ccrccloudop memlock to unlimited(soft)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: soft
+    limit_item: memlock
+    value: unlimited
+- name:  set ccrccloudop memlock to unlimited(hard)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: hard
+    limit_item: memlock
+    value: unlimited
+- name: set ccrccloudop nproc to 10240(soft)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: soft
+    limit_item: nproc
+    value: "10240"
+- name: set ccrccloudop nproc to 10240(hard)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: hard
+    limit_item: nproc
+    value: "10240"
+- name: set ccrccloudop sigpending to 2064462(soft)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: soft
+    limit_item: sigpending
+    value: "2064462"
+- name: set ccrccloudop sigpending to 2064462(soft)
+  pam_limits:
+    domain: ccrccloudop
+    limit_type: hard
+    limit_item: sigpending
+    value: "2064462"
+
+- name: set elasticsearch nofile to 65536(soft)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: soft
+    limit_item: nofile
+    value: "65536"
+- name: set elasticsearch nofile to 65536(hard)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: hard
+    limit_item: nofile
+    value: "65536"
+- name: set elasticsearch memlock to unlimited(soft)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: soft
+    limit_item: memlock
+    value: unlimited
+- name: set elasticsearch memlock to unlimited(hard)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: hard
+    limit_item: memlock
+    value: unlimited
+- name: set elasticsearch nproc to 10240(soft)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: soft
+    limit_item: nproc
+    value: "10240"
+- name: set elasticsearch nproc to 10240(hard)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: hard
+    limit_item: nproc
+    value: "10240"
+- name: set elasticsearch sigpending to 2064462(soft)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: soft
+    limit_item: sigpending
+    value: "2064462"
+- name: set elasticsearch sigpending to 2064462(hard)
+  pam_limits:
+    domain: elasticsearch
+    limit_type: hard
+    limit_item: sigpending
+    value: "2064462"
+...
