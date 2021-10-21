@@ -1,5 +1,9 @@
 --- 
 - hosts: all
   roles: 
-    - role: set_ip_forward
+    - role: modify_elastic_limits
+      tags: [elastic_limits]
+
+    - role: modify_elastic_sysctl
+      tags: [elastic_sysctl]
 ...      
